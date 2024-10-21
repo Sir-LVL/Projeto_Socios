@@ -50,9 +50,10 @@ object Form_consul_socio: TForm_consul_socio
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'SELECT id, nome AS Nome, renda AS Renda, '
-      'ativo AS Ativo FROM Socios'
-      'SELECT format(renda,'#39'N2'#39', '#39'pt-BR'#39') as '#39'0.00,00'#39' from Socios')
+      'select  id, nome AS Nome, '
+      
+        'ativo AS Ativo,  Format(renda, '#39'#0,0.00'#39', '#39'pt-BR'#39') as Renda from' +
+        ' Socios')
     Left = 64
     Top = 280
   end

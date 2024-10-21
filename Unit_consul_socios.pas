@@ -14,7 +14,6 @@ type
     btn_fechar: TBitBtn;
     procedure btn_fecharClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,11 +38,6 @@ procedure TForm_consul_socio.FormShow(Sender: TObject);
 begin
   Form_consul_socio.adoquery_aux.Close;
   Form_consul_socio.adoquery_aux.Open;
-end;
-
-procedure TForm_consul_socio.FormCreate(Sender: TObject);
-begin
-  adoquery_aux.FieldByName('renda').DisplayText := '00.00';
 end;
 
 end.
