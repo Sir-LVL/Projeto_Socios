@@ -18,6 +18,8 @@ type
     RLDBText1: TRLDBText;
     RLDBText2: TRLDBText;
     RLDBText3: TRLDBText;
+    RLLabel5: TRLLabel;
+    RLDBText4: TRLDBText;
   private
     { Private declarations }
   public

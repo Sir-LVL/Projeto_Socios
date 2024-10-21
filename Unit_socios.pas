@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Buttons, DB, ADODB, Mask;
+  Dialogs, StdCtrls, Buttons, DB, ADODB, Mask, ComCtrls;
 
 type
   TForm_socios = class(TForm)
@@ -24,6 +24,8 @@ type
     adoquery_aux: TADOQuery;
     Label4: TLabel;
     cb_ativo: TComboBox;
+    lbl1: TLabel;
+    dt_cadastro: TDateTimePicker;
     procedure btn_fecharClick(Sender: TObject);
     procedure btn_novoClick(Sender: TObject);
     procedure btn_salvarClick(Sender: TObject);
@@ -68,8 +70,13 @@ begin
         end;
       if Form_socios.Components[i] is TComboBox then
         begin
-              (form_socios.Components[i] as TComboBox).Enabled := false;
-              (form_socios.Components[i] as TComboBox).color := clInfoBk;
+          (form_socios.Components[i] as TComboBox).Enabled := false;
+          (form_socios.Components[i] as TComboBox).color := clInfoBk;
+        end;
+      if Form_socios.Components[i] is TDateTimePicker then
+        begin
+          (Form_socios.Components[i] as TDateTimePicker).Enabled := False;
+          (Form_socios.Components[i] as TDateTimePicker).Color := clInfoBk;
         end;
     end;
 end;
@@ -142,6 +149,14 @@ begin
               (form_socios.Components[i] as TComboBox).color := clWindow;
             end;
         end;
+      if Form_socios.Components[i] is TDateTimePicker then
+        begin
+          if (Form_socios.Components[i] as TDateTimePicker).Name <> 'edt_id' then
+            begin
+              (Form_socios.Components[i] as TDateTimePicker).Enabled := True;
+              (Form_socios.Components[i] as TDateTimePicker).Color := clWindow;
+            end;
+        end;
     end;
 end;
 
@@ -165,9 +180,12 @@ begin
 end;
 
 procedure TForm_socios.btn_salvarClick(Sender: TObject);
-var deuerro: boolean;
+var
+  deuerro: boolean;
+  data : string;
 begin
   form_menu.conexaoDB.BeginTrans;
+  data := FormatDateTime('mm/dd/yyyy', dt_cadastro.Date);
   if (trim(edt_nome.Text) = '') or (trim(edt_renda.Text) = '') or (trim(cb_ativo.Text) = '') then
     begin
       Showmessage('Preencha todos os campos!')
@@ -176,9 +194,9 @@ begin
     begin
       if operacao = 'novo' then
         begin
-          adoquery_aux.SQL.Text := 'INSERT INTO Socios (nome, renda, ativo) VALUES ' +
+          adoquery_aux.SQL.Text := 'INSERT INTO Socios (nome, renda, ativo, data_cadastro) VALUES ' +
             '(' + QuotedStr(edt_nome.Text) + ', ' + edt_renda.Text +
-            ', ' + QuotedStr(cb_ativo.Text)
+            ', ' + QuotedStr(cb_ativo.Text) + ',' + QuotedStr(data)
             + ')';
         end
       else if operacao = 'alterar' then
@@ -253,6 +271,8 @@ begin
       libera_campos;
       habilita_salvar(sender);
     end;
+  dt_cadastro.Enabled := False;
+  dt_cadastro.Color := clInfoBk;
 end;
 
 procedure TForm_socios.btn_cancelarClick(Sender: TObject);

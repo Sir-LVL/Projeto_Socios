@@ -1,7 +1,7 @@
 object Form_consul_socio: TForm_consul_socio
-  Left = 418
-  Top = 156
-  Width = 598
+  Left = 261
+  Top = 147
+  Width = 715
   Height = 369
   Caption = 'Consulta S'#243'cios'
   Color = clBtnFace
@@ -16,11 +16,18 @@ object Form_consul_socio: TForm_consul_socio
   TextHeight = 13
   object DBGrid1: TDBGrid
     Left = 8
-    Top = 16
-    Width = 561
-    Height = 257
+    Top = 8
+    Width = 681
+    Height = 265
     DataSource = ds_socios
+    DragMode = dmAutomatic
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Verdana'
+    Font.Style = []
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+    ParentFont = False
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -29,7 +36,7 @@ object Form_consul_socio: TForm_consul_socio
     TitleFont.Style = []
   end
   object btn_fechar: TBitBtn
-    Left = 208
+    Left = 256
     Top = 288
     Width = 169
     Height = 25
@@ -49,10 +56,12 @@ object Form_consul_socio: TForm_consul_socio
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'select  id, nome AS Nome, '
       
-        'ativo AS Ativo,  Format(renda, '#39'#0,0.00'#39', '#39'pt-BR'#39') as Renda from' +
-        ' Socios')
+        'select  id, Format(data_cadastro, '#39'dd/MM/yyyy'#39', '#39'pt-BR'#39') as Data' +
+        '_De_Cadastro , nome AS Nome, '
+      
+        'ativo AS Ativo,  Format(renda, '#39'R$#0,0.00'#39', '#39'pt-BR'#39') as Renda fr' +
+        'om Socios')
     Left = 64
     Top = 280
   end

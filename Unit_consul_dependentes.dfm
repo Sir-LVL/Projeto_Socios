@@ -1,6 +1,6 @@
 object Form_consul_dependente: TForm_consul_dependente
-  Left = 327
-  Top = 182
+  Left = 753
+  Top = 242
   BorderStyle = bsSingle
   Caption = 'Consulta Dependentes'
   ClientHeight = 288

@@ -21,6 +21,7 @@ object Form_consul_dependente: TForm_consul_dependente
     Width = 697
     Height = 217
     DataSource = ds_dependentes
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
     TabOrder = 0
     TitleFont.Charset = ANSI_CHARSET
     TitleFont.Color = clWindowText

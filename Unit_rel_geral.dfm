@@ -70,11 +70,24 @@ object Form_rel_geral: TForm_rel_geral
         ParentFont = False
       end
       object RLLabel4: TRLLabel
-        Left = 432
+        Left = 400
         Top = 64
         Width = 52
         Height = 22
         Caption = 'Ativo:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+      end
+      object RLLabel5: TRLLabel
+        Left = 544
+        Top = 64
+        Width = 161
+        Height = 22
+        Caption = 'Data De Cadastro:'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -19
@@ -112,12 +125,21 @@ object Form_rel_geral: TForm_rel_geral
         DisplayMask = 'R$0,0.00'
       end
       object RLDBText3: TRLDBText
-        Left = 432
+        Left = 400
         Top = 24
         Width = 30
         Height = 16
         DataField = 'ativo'
         DataSource = Teste.ds_socios
+      end
+      object RLDBText4: TRLDBText
+        Left = 544
+        Top = 24
+        Width = 29
+        Height = 16
+        DataField = 'data'
+        DataSource = Teste.ds_socios
+        DisplayMask = 'DD/MM/YYYY'
       end
     end
   end

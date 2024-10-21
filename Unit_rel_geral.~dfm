@@ -109,7 +109,7 @@ object Form_rel_geral: TForm_rel_geral
         Height = 16
         DataField = 'renda'
         DataSource = Teste.ds_socios
-        DisplayMask = 'R$0.00'
+        DisplayMask = 'R$0,0.00'
       end
       object RLDBText3: TRLDBText
         Left = 432

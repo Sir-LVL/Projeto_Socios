@@ -16,7 +16,9 @@ object Teste: TTeste
     Top = 80
   end
   object adoquery_dependentes: TADOQuery
+    Active = True
     Connection = Form_menu.conexaoDB
+    CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
       'SELECT * FROM Dependente')
@@ -29,6 +31,7 @@ object Teste: TTeste
     Top = 32
   end
   object ds_dependentes: TDataSource
+    DataSet = adoquery_dependentes
     Left = 144
     Top = 32
   end

@@ -43,13 +43,20 @@ object Form_socios: TForm_socios
     Height = 13
     Caption = 'Ativo:'
   end
+  object lbl1: TLabel
+    Left = 264
+    Top = 104
+    Width = 32
+    Height = 26
+    Caption = 'Data:'#13#10
+  end
   object btn_novo: TBitBtn
     Left = 24
     Top = 168
     Width = 89
     Height = 25
     Caption = 'Novo'
-    TabOrder = 4
+    TabOrder = 5
     OnClick = btn_novoClick
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
@@ -72,7 +79,7 @@ object Form_socios: TForm_socios
     Width = 89
     Height = 25
     Caption = 'Salvar'
-    TabOrder = 5
+    TabOrder = 6
     OnClick = btn_salvarClick
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
@@ -95,7 +102,7 @@ object Form_socios: TForm_socios
     Width = 89
     Height = 25
     Caption = 'Alterar'
-    TabOrder = 6
+    TabOrder = 7
     OnClick = btn_alterarClick
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
@@ -118,7 +125,7 @@ object Form_socios: TForm_socios
     Width = 89
     Height = 25
     Caption = 'Cancelar'
-    TabOrder = 7
+    TabOrder = 8
     OnClick = btn_cancelarClick
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
@@ -141,7 +148,7 @@ object Form_socios: TForm_socios
     Width = 89
     Height = 25
     Caption = 'Excluir'
-    TabOrder = 8
+    TabOrder = 9
     OnClick = btn_excluirClick
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
@@ -164,7 +171,7 @@ object Form_socios: TForm_socios
     Width = 89
     Height = 25
     Caption = 'Fechar'
-    TabOrder = 9
+    TabOrder = 10
     OnClick = btn_fecharClick
     Kind = bkAbort
   end
@@ -176,7 +183,7 @@ object Form_socios: TForm_socios
     Color = clInfoBk
     Enabled = False
     MaxLength = 3
-    TabOrder = 10
+    TabOrder = 11
   end
   object edt_nome: TEdit
     Left = 48
@@ -232,6 +239,18 @@ object Form_socios: TForm_socios
     Items.Strings = (
       'Sim'
       'N'#227'o')
+  end
+  object dt_cadastro: TDateTimePicker
+    Left = 264
+    Top = 120
+    Width = 121
+    Height = 21
+    Date = 45589.606372824080000000
+    Format = 'dd/MM/yyyy'
+    Time = 45589.606372824080000000
+    Color = clInfoBk
+    Enabled = False
+    TabOrder = 4
   end
   object adoquery_aux: TADOQuery
     Connection = Form_menu.conexaoDB

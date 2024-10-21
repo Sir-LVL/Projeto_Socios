@@ -10,7 +10,9 @@ object Teste: TTeste
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'SELECT * FROM Socios'
+      
+        'SELECT id, nome, renda, ativo,  Format(data_cadastro, '#39'dd/MM/yyy' +
+        'y'#39', '#39'pt-BR'#39') as data FROM Socios'
       '')
     Left = 24
     Top = 80
