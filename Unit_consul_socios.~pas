@@ -43,7 +43,7 @@ end;
 
 procedure TForm_consul_socio.FormCreate(Sender: TObject);
 begin
-  adoquery_aux.FieldByName('renda').displayformat := '0.00,00'
+  adoquery_aux.FieldByName('renda').DisplayText := '00.00';
 end;
 
 end.
